@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <% include ../views/common/head %>   
+    <script src="../javascripts/views/questions.js"></script>
+    <script src="../javascripts/form-validators/questionValidator.js"></script> 
+</head>
+<body class="container">
+    <style>
+    #divTopic { margin-top: 100px;}
+    li.previous > button {
+         float:left;
+        }
+     li.next > button {
+         float:right;
+        }
+    </style>
+    <header>  
+       
+    </header>
+
+    <main>
+        <div class="container" id="divTopic">
+            <form method="post" id="question-form"  class="well span4">
+                  <div class="text-center" >
+                        <h1>
+                            Question : <%- question_data.questions.quest_name %>
+                            <input type="hidden" name="q_id" value="<%-question_data.questions.quest_id%>" >
+                            <input type="hidden" name="sel_ansId" value="<%-answer_data.ans_id%>" >
+                        </h1>
+                        <p class="lead"></p>
+                        <center>                        
+                               <% question_data.answers.forEach(function(ansObj){%>                                    
+                                    <div class="radio">
+                                          <label>
+                                            <input type="radio" name="ans" id="<%-ansObj.ans_id%>" <%if(answer_data.ans_id ==ansObj.ans_id){%> checked ="checked"<%}%> value="<%-ansObj.ans_point%>" >
+                                                <%-ansObj.ans_name%>
+                                          </label>
+                                    </div>            
+                                <% }); %>                            
+                        </center>
+                  </div>
+                  <nav>
+                      <ul class="pager">
+                        <%if(question_data.questions.quest_start!='Y'){%>
+                            <li class="previous"><button type="submit"  class="btn btn-primary " name="quest_action" value="previous"><span aria-hidden="true"> &larr;</span> Previous</button></li>
+                        <%}%>
+                        <%if(question_data.questions.quest_end!='Y'){%>
+                            <li class="next"><button type="submit"  class="btn btn-primary " name="quest_action" value="next">Next <span aria-hidden="true">&rarr;</span></button></a></li>
+                        <%}else{%>  
+                            <li class="next"><button type="submit"  class="btn btn-primary " name="quest_action" value="result">Result</button></a></li>
+                        <%}%>
+                      </ul>
+                 </nav>
+             </form>
+             
+        </div><!-- /.container -->
+        <% include ../views/modals/alert %>
+    </main>   
+
+    <footer>
+       
+    </footer>
+    
+</body>
+</html>

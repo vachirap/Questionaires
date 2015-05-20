@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <% include ../views/common/head %>
+         <script src="../javascripts/views/home.js"></script>
+         <script src="../javascripts/form-validators/homeValidator.js"></script>
+    </head>
+    <body>
+
+<style>
+    #divTopic { margin-top: 100px;}
+</style>
+
+<div class="container" id="divTopic">
+    <form method="post" id="home-form"  class="well span4">
+          <div class="text-center" >
+            <h1>ยินดีต้อนรับสู่ระบบคำถาม</h1>
+            <p class="lead">คำถามนี้เป็นคำถามเชิงคณิตศาสตร์หรือความรู้ทั่วไปอย่างง่าย เหมาะสำหรับเด็กๆ.</p>
+            <center>
+                <button type="submit" id="btnStart" class="btn btn-primary btn-lg">เริ่มคำถาม</button>
+            </center>
+          </div>
+    </form>
+</div><!-- /.container -->
+ <% include ../views/modals/alert %>
+    </body>
+</html>

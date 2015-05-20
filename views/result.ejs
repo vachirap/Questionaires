@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <% include ../views/common/head %>      
+</head>
+<body class="container">
+    <style>
+    #divTopic { margin-top: 100px;}
+    li.previous > button {
+         float:left;
+        }
+     li.next > button {
+         float:right;
+        }
+    </style>
+    <header>  
+       
+    </header>
+
+    <main>
+        <div class="container" id="divTopic">
+            <form method="post" id="result-form"  class="well span4">
+                  <div class="text-center" >
+                        <h1>
+                            ผลคะแนนของ User : <%-user_question_point.username%>                              
+                        </h1>
+                        <p class="lead">ได้คะแนนทั้งหมด : <%-user_question_point.quest_points%>   คะแนน</p>
+                        <ul>
+                            <li>
+                                 ตอบถูกทั้งหมด <%-user_question_point.quest_right%> ข้อ
+                            </li>
+                            <li>
+                                 ตอบผิดทั้งหมด <%-user_question_point.quest_wrong%>   ข้อ
+                            </li>
+                        </ul>
+                        <center>                    
+                             <button type="submit" id="btnLogout" class="btn btn-primary btn-lg">ออกจากระบบ</button>                       
+                        </center>
+                  </div>                  
+             </form>
+             
+        </div><!-- /.container -->
+        <% include ../views/modals/alert %>
+    </main>   
+
+    <footer>
+       
+    </footer>
+    
+</body>
+</html>

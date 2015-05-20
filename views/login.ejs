@@ -1,0 +1,47 @@
+﻿<html lang="en">
+<head>
+    <% include ../views/common/head %>
+    <script src="../javascripts/views/login.js"></script>
+    <script src="../javascripts/form-validators/loginValidator.js"></script>
+</head>
+<body class="container">
+
+    <header>  
+       
+    </header>
+
+    <main>
+        <div id="login-container">
+			<form method="post" id="login-form"  class="well span4">
+				<p>กรุณา login เพื่อเข้าสู่ระบบ</p>
+				<div class="input-group" >
+				  <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+				  <input type="text" class="form-control" id="usr" name="user" placeholder="Username">
+				</div>
+                <p>
+                <div class="input-group" >
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                  <input type="password" class="form-control" id="pwd" name="pass" placeholder="Password">
+                </div>
+				
+				<button type="submit" id="btn-login" class="btn btn-primary">
+                        Sign in
+                </button>
+				<div class="clear-fix"></div>
+				<hr/>
+				<div class="btm-links">
+					<a href="#" id="forgot-password">Forgot Your Password?</a>
+					<a href="/signup" id="create-account">Create An Account</a>
+				</div>
+				
+			</form>
+        </div>
+         <% include ../views/modals/alert %>
+    </main>
+
+    <footer>
+       
+    </footer>
+    
+</body>
+</html>
